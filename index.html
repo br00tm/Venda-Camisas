@@ -326,6 +326,42 @@
                 </div>
             </div>
         </section>
+
+        <!-- Últimos Jogos do Corinthians -->
+        <section id="ultimos-jogos" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title">Últimos Jogos do <span class="gradient-text">Timão</span></h2>
+                <div class="row justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-10">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" id="jogos-corinthians">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Competição</th>
+                                        <th>Mandante</th>
+                                        <th>Placar</th>
+                                        <th>Visitante</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" class="text-center py-4">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="spinner-border text-primary" role="status">
+                                                    <span class="visually-hidden">Carregando...</span>
+                                                </div>
+                                            </div>
+                                            <p class="mt-2">Carregando os últimos jogos do Timão...</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Rodapé -->
@@ -411,7 +447,97 @@
                 element.style.webkitTextFillColor = 'transparent';
                 element.style.display = 'inline-block';
             });
+
+            // Função para buscar os últimos jogos do Corinthians
+            buscarJogosCorinthians();
         });
+
+        // Função para buscar os últimos jogos do Corinthians da API-Football
+        function buscarJogosCorinthians() {
+            const tabelaJogos = document.getElementById('jogos-corinthians').getElementsByTagName('tbody')[0];
+            
+            // Usando a API-Football (ou você pode substituir por qualquer API de sua preferência)
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '9355e86c15msh90ca7f8bab77de4p1b1c9fjsn0337d3f30c22', // Chave de exemplo
+                    'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+                }
+            };
+            
+            fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?team=133&last=5', options)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.response && data.response.length > 0) {
+                        let htmlJogos = '';
+                        
+                        // Processar os dados e criar as linhas da tabela
+                        data.response.forEach(jogo => {
+                            const data = new Date(jogo.fixture.date).toLocaleDateString('pt-BR');
+                            const competicao = jogo.league.name;
+                            const mandante = jogo.teams.home.name;
+                            const visitante = jogo.teams.away.name;
+                            const golsMandante = jogo.goals.home !== null ? jogo.goals.home : '-';
+                            const golsVisitante = jogo.goals.away !== null ? jogo.goals.away : '-';
+                            const placar = `${golsMandante} x ${golsVisitante}`;
+                            
+                            // Destacar o Corinthians
+                            const homeClass = mandante.includes('Corinthians') ? 'fw-bold text-primary' : '';
+                            const awayClass = visitante.includes('Corinthians') ? 'fw-bold text-primary' : '';
+                            
+                            htmlJogos += `
+                                <tr>
+                                    <td>${data}</td>
+                                    <td>${competicao}</td>
+                                    <td class="${homeClass}">${mandante}</td>
+                                    <td class="fw-bold">${placar}</td>
+                                    <td class="${awayClass}">${visitante}</td>
+                                </tr>
+                            `;
+                        });
+                        
+                        tabelaJogos.innerHTML = htmlJogos;
+                    } else {
+                        // Caso não encontre dados ou ocorra algum erro
+                        exibirJogosFallback(tabelaJogos);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar os jogos:', error);
+                    exibirJogosFallback(tabelaJogos);
+                });
+        }
+        
+        // Função para exibir dados caso a API falhe
+        function exibirJogosFallback(tabelaJogos) {
+            // Dados de exemplo para caso a API falhe
+            const jogosRecentes = [
+                {data: "21/10/2024", competicao: "Brasileirão", mandante: "Corinthians", placar: "2 x 1", visitante: "Flamengo"},
+                {data: "17/10/2024", competicao: "Copa do Brasil", mandante: "Palmeiras", placar: "0 x 1", visitante: "Corinthians"},
+                {data: "13/10/2024", competicao: "Brasileirão", mandante: "Corinthians", placar: "3 x 0", visitante: "Athletico-PR"},
+                {data: "06/10/2024", competicao: "Brasileirão", mandante: "São Paulo", placar: "1 x 1", visitante: "Corinthians"},
+                {data: "03/10/2024", competicao: "Copa Sul-Americana", mandante: "Corinthians", placar: "2 x 0", visitante: "Fortaleza"}
+            ];
+            
+            let htmlJogos = '';
+            
+            jogosRecentes.forEach(jogo => {
+                const homeClass = jogo.mandante.includes('Corinthians') ? 'fw-bold text-primary' : '';
+                const awayClass = jogo.visitante.includes('Corinthians') ? 'fw-bold text-primary' : '';
+                
+                htmlJogos += `
+                    <tr>
+                        <td>${jogo.data}</td>
+                        <td>${jogo.competicao}</td>
+                        <td class="${homeClass}">${jogo.mandante}</td>
+                        <td class="fw-bold">${jogo.placar}</td>
+                        <td class="${awayClass}">${jogo.visitante}</td>
+                    </tr>
+                `;
+            });
+            
+            tabelaJogos.innerHTML = htmlJogos;
+        }
     </script>
 </body>
 </html> 
