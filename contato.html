@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Loja Oficial Corinthians</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Animate.css para animações -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar fixa -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-shield-fill text-white me-2"></i>Loja Corinthians
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quem-somos.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-cart3"></i> Carrinho (0)</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Minha Conta
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Meu Perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-bag"></i> Meus Pedidos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner da página -->
+    <div class="page-banner text-white py-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold">Fale Conosco</h1>
+                    <p class="lead">Estamos prontos para atender a Fiel Torcida com todo o carinho e dedicação.</p>
+                </div>
+                <div class="col-md-6 d-none d-md-block text-end" data-aos="fade-left">
+                    <i class="bi bi-shield-fill fs-1 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main class="container mb-5">
+        <div class="row">
+            <!-- Formulário de contato -->
+            <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-up">
+                <div class="card border-0 glass-card">
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-4 section-title">Envie sua mensagem</h2>
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label">Nome completo</label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe seu nome.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe um e-mail válido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" id="telefone">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="assunto" class="form-label">Assunto</label>
+                                    <select class="form-select" id="assunto" required>
+                                        <option value="" selected disabled>Selecione um assunto</option>
+                                        <option value="pedido">Informações sobre pedido</option>
+                                        <option value="produto">Dúvidas sobre produtos</option>
+                                        <option value="personalizado">Camisas personalizadas</option>
+                                        <option value="atacado">Compras em atacado</option>
+                                        <option value="devolucao">Troca ou devolução</option>
+                                        <option value="outro">Outro assunto</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor, selecione um assunto.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensagem" class="form-label">Mensagem</label>
+                                    <textarea class="form-control" id="mensagem" rows="5" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, escreva sua mensagem.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="termo" required>
+                                        <label class="form-check-label" for="termo">
+                                            Concordo em receber novidades e promoções da Loja Oficial Corinthians.
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Você deve concordar antes de enviar.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Informações de contato -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card border-0 glass-card mb-4">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 mb-4">Informações de Contato</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-geo-alt-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="h6 mb-1">Endereço</h5>
+                                    <p class="mb-0">Av. do Timão, 1910<br>São Paulo - SP, 03918-200</p>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-telephone-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="h6 mb-1">Telefone</h5>
+                                    <p class="mb-0">(11) 9810-1910</p>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-envelope-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="h6 mb-1">E-mail</h5>
+                                    <p class="mb-0">contato@lojacorinthians.com.br</p>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <i class="bi bi-clock-fill text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h5 class="h6 mb-1">Horário de Atendimento</h5>
+                                    <p class="mb-0">Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 14h</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card border-0 glass-card mb-4">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 mb-3">Redes Sociais</h2>
+                        <p>Siga-nos nas redes sociais e fique por dentro das novidades:</p>
+                        <div class="social-icons d-flex gap-3 fs-4">
+                            <a href="#" class="text-primary" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-primary" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-primary" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="text-primary" data-bs-toggle="tooltip" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 glass-card">
+                    <div class="card-body p-4">
+                        <h2 class="card-title h4 mb-3">Personalização</h2>
+                        <p>Quer personalizar sua camisa com nome e número?</p>
+                        <a href="#personalizar" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#personalizarModal">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Perguntas Frequentes -->
+        <section class="mt-5 pt-3" data-aos="fade-up">
+            <h2 class="text-center mb-4 section-title">Perguntas Frequentes</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item glass-card mb-3 border-0">
+                            <h2 class="accordion-header" id="faqHeading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                    Como sei que as camisas são originais?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Todas as nossas camisas são produtos oficiais licenciados pelo Sport Club Corinthians Paulista e pela Nike. Elas possuem etiquetas de autenticidade, selo oficial e garantia contra defeitos de fabricação. Somos parceiros oficiais do clube desde 2015.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item glass-card mb-3 border-0">
+                            <h2 class="accordion-header" id="faqHeading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                    Qual o prazo de entrega?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    O prazo varia conforme a localidade. Para capitais e regiões metropolitanas, o prazo médio é de 3 a 5 dias úteis. Para demais localidades, pode variar de 5 a 10 dias úteis. Camisas personalizadas podem ter um acréscimo de 2 dias úteis no prazo de produção.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item glass-card mb-3 border-0">
+                            <h2 class="accordion-header" id="faqHeading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                    Como funciona a personalização de camisas?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Você pode adicionar nome e número nas camisas oficiais. Basta escolher o modelo desejado, selecionar a opção de personalização durante a compra e informar o nome e número que deseja. Utilizamos a mesma tecnologia e fonte oficial utilizadas nas camisas dos jogadores.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item glass-card border-0">
+                            <h2 class="accordion-header" id="faqHeading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                    Como posso trocar uma camisa?
+                                </button>
+                            </h2>
+                            <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aceitamos trocas em até 30 dias após o recebimento, desde que o produto esteja em perfeito estado, com etiquetas e embalagem original. Camisas personalizadas não podem ser trocadas, exceto em caso de defeito de fabricação. Entre em contato com nosso SAC para iniciar o processo de troca.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mapa -->
+        <section class="mt-5" data-aos="fade-up">
+            <h2 class="text-center mb-4 section-title">Como Chegar</h2>
+            <div class="card glass-card border-0">
+                <div class="card-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1402568460987!2d-46.47490708503236!3d-23.564542784683096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce66dec98fb855%3A0xf2b061ffbcd2ecf8!2sNeo%20Qu%C3%ADmica%20Arena!5e0!3m2!1spt-BR!2sbr!4v1652989528384!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" class="border-0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Personalização -->
+    <div class="modal fade" id="personalizarModal" tabindex="-1" aria-labelledby="personalizarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="personalizarModalLabel">Personalização de Camisas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Personalize sua camisa do Corinthians com nome e número:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Fonte oficial da Nike</li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Material de alta qualidade</li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Aplicação profissional</li>
+                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Garantia de durabilidade</li>
+                    </ul>
+                    <p>Você pode personalizar qualquer camisa oficial da nossa loja. Basta selecionar a opção durante o processo de compra ou entrar em contato conosco para mais informações.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <a href="servicos.html" class="btn btn-primary">Ver produtos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="footer-brand mb-3">
+                        <i class="bi bi-shield-fill text-primary me-2"></i>
+                        <span class="fs-4 fw-bold">Loja Corinthians</span>
+                    </div>
+                    <p>A sua loja oficial de camisas do Corinthians desde 2013.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-light" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light" data-bs-toggle="tooltip" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-light" data-bs-toggle="tooltip" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Início</a></li>
+                        <li class="mb-2"><a href="quem-somos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Sobre Nós</a></li>
+                        <li class="mb-2"><a href="servicos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Produtos</a></li>
+                        <li class="mb-2"><a href="contato.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <h5 class="mb-3">Categorias</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="servicos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Camisas Oficiais</a></li>
+                        <li class="mb-2"><a href="servicos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Camisas Retrô</a></li>
+                        <li class="mb-2"><a href="servicos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Camisas Personalizadas</a></li>
+                        <li class="mb-2"><a href="servicos.html" class="text-light text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Kits Infantis</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Contato</h5>
+                    <address class="mb-0">
+                        <p class="mb-2"><i class="bi bi-geo-alt me-2"></i> Av. do Timão, 1910, São Paulo</p>
+                        <p class="mb-2"><i class="bi bi-telephone me-2"></i> (11) 9810-1910</p>
+                        <p class="mb-0"><i class="bi bi-envelope me-2"></i> contato@lojacorinthians.com.br</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Loja Corinthians. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Feito com <i class="bi bi-heart-fill text-danger"></i> por torcedores para torcedores</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a id="back-to-top" class="btn position-fixed rounded-circle" href="#" role="button">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle with Popper via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script personalizado -->
+    <script src="js/main.js"></script>
+    <!-- Inicialização do AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Validação do formulário
+        (function() {
+            'use strict';
+            
+            var forms = document.querySelectorAll('.needs-validation');
+            
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+        
+        // Inicialização dos tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html> 

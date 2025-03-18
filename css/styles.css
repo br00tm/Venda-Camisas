@@ -1,0 +1,842 @@
+/* Estilos personalizados para o site institucional - Tema Corinthians */
+
+/* Variáveis CSS - Tema Corinthians */
+:root {
+    --primary-color: #000000; /* Preto */
+    --primary-dark: #111111; /* Preto escuro */
+    --primary-light: #333333; /* Preto claro */
+    --secondary-color: #FFFFFF; /* Branco */
+    --secondary-dark: #DDDDDD; /* Branco escuro */
+    --accent-color: #C4A962; /* Dourado */
+    --dark-color: #0E0E0E; /* Fundo escuro */
+    --dark-secondary: #1A1A1A; /* Fundo escuro secundário */
+    --light-color: #F2F2F2; /* Branco com toque de cinza */
+    --text-color: #FFFFFF; /* Texto claro */
+    --text-dark: #fdfbfb; /* Texto claro secundário */
+    --success-color: #28a745; /* Verde */
+    --info-color: #17a2b8; /* Azul */
+    --warning-color: #ffc107; /* Amarelo */
+    --danger-color: #dc3545; /* Vermelho */
+    --transition-speed: 0.3s;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --gradient-secondary: linear-gradient(135deg, var(--primary-light), var(--dark-secondary));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-light));
+    --gradient-dark: linear-gradient(135deg, var(--dark-color), var(--dark-secondary));
+    --gradient-text: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
+    --border-radius: 8px;
+    --glass-effect: rgba(255, 255, 255, 0.1);
+    --corinthians-stripe-gradient: repeating-linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--primary-color) 10px,
+        var(--primary-light) 10px,
+        var(--primary-light) 20px
+    );
+}
+
+/* Ajustes gerais */
+body {
+    padding-top: 76px; /* Espaço para a navbar fixa */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23222222' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+}
+
+/* Efeitos de transição para links */
+a {
+    transition: all var(--transition-speed) ease;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilização da navbar */
+.navbar {
+    background: var(--primary-color) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid var(--glass-effect);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color) !important;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    margin: 0 5px;
+    color: var(--text-color) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-item {
+    padding: 10px 16px;
+    transition: all var(--transition-speed) ease;
+    color: var(--text-color);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-light);
+    color: var(--secondary-color);
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ajustes para o carrossel */
+.carousel-item {
+    height: 650px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.85) contrast(1.1);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 80%;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--glass-effect);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+    border-left: 4px solid var(--accent-color);
+}
+
+.carousel-caption h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: var(--accent-color);
+}
+
+/* Títulos e textos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 0.5px;
+}
+
+.display-4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.lead {
+    font-weight: 400;
+    color: var(--text-dark);
+    font-size: 1.15rem;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color);
+    box-shadow: 0 2px 5px rgba(196, 169, 98, 0.5);
+}
+
+/* Animações para cards */
+.card {
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--glass-effect);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--dark-secondary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.card-body {
+    padding: 1.75rem;
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    letter-spacing: 0.5px;
+}
+
+.card-text {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.card-header {
+    font-weight: 600;
+    padding: 1.25rem 1.75rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--glass-effect);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Pricing cards para camisas */
+.pricing-card {
+    border: none;
+    transition: all 0.3s;
+}
+
+.pricing-card .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    z-index: 1;
+}
+
+.pricing-card .card-img-top {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.pricing-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.pricing-card .card-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.pricing-card .card-price small {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.pricing-card .card-features {
+    margin: 25px 0;
+}
+
+.pricing-card .card-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card .card-features li:last-child {
+    border-bottom: none;
+}
+
+/* Estilização de botões */
+.btn {
+    padding: 0.6rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-light);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}
+
+.btn-light {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-light:hover {
+    background: var(--secondary-dark);
+    color: var(--primary-color);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.btn-accent:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+/* Banners coloridos */
+.bg-primary {
+    background: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background: var(--primary-light) !important;
+}
+
+.bg-dark {
+    background: var(--dark-color) !important;
+}
+
+.bg-accent {
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Estilização do rodapé */
+footer {
+    background: var(--primary-color) !important;
+    border-top: 1px solid var(--glass-effect);
+}
+
+/* Ícones sociais no rodapé */
+.social-icons a {
+    font-size: 1.3rem;
+    transition: all var(--transition-speed);
+    margin-right: 15px;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Seções com fundo claro */
+.bg-light {
+    background-color: var(--primary-light) !important;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-effect);
+}
+
+/* Formulário de contato */
+.form-control, .form-select {
+    padding: 0.85rem 1.25rem;
+    border-radius: 4px;
+    background-color: var(--dark-color);
+    border: 1px solid var(--glass-effect);
+    color: var(--text-color);
+    transition: all var(--transition-speed);
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(196, 169, 98, 0.25);
+    border-color: var(--accent-color);
+    background-color: rgba(10, 10, 10, 0.8);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.invalid-feedback {
+    color: var(--danger-color);
+}
+
+/* Decoração na página equipe */
+.rounded-circle {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--accent-color);
+}
+
+/* Efeito para ícones */
+.bi {
+    transition: transform var(--transition-speed);
+}
+
+.card:hover .bi {
+    transform: scale(1.2);
+    color: var(--accent-color);
+}
+
+/* Efeito de sombra para imagens */
+.img-fluid {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+}
+
+.img-fluid:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Accordion personalizado */
+.accordion-item {
+    background-color: var(--primary-light);
+    border: 1px solid var(--glass-effect);
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 1.25rem 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(196, 169, 98, 0.1);
+    color: var(--accent-color);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(196, 169, 98, 0.25);
+}
+
+.accordion-button:not(.collapsed)::after {
+    color: var(--accent-color);
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* Botão voltar ao topo */
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    background: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--accent-color);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-light);
+}
+
+/* Ícone nos cards */
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    margin-bottom: 25px;
+    transition: all var(--transition-speed);
+    border: 1px solid var(--accent-color);
+    position: relative;
+    z-index: 1;
+}
+
+.icon-wrapper i {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+}
+
+/* Depoimentos */
+.testimonial {
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-light);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--glass-effect);
+    transition: all var(--transition-speed);
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--accent-color);
+}
+
+.testimonial-img img {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--accent-color);
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    position: relative;
+    padding: 0 20px;
+    color: var(--text-dark);
+}
+
+.testimonial-text:before {
+    content: '\201C';
+    font-size: 4rem;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    color: var(--accent-color);
+    opacity: 0.2;
+}
+
+.testimonial-name {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.testimonial-position {
+    color: var(--accent-color) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Animações para elementos */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contadores */
+.counter {
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeitos para seções */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Efeito de vidro (glass morphism) */
+.glass-card {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-effect);
+    border-radius: var(--border-radius);
+}
+
+/* Estilos para CTA */
+.cta-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(196, 169, 98, 0.4) 0%, transparent 70%);
+    opacity: 0.3;
+    animation: pulse 5s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+}
+
+/* Efeito de borda para destaques */
+.accent-border {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+}
+
+/* Badge */
+.badge {
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.badge-accent {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Preço original riscado */
+.price-old {
+    text-decoration: line-through;
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* Preço com desconto */
+.price-discount {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Produto tag */
+.product-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.product-tag.new {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.product-tag.sale {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Efeito listrado Corinthians */
+.corinthians-stripes {
+    position: relative;
+    overflow: hidden;
+}
+
+.corinthians-stripes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--corinthians-stripe-gradient);
+    z-index: 1;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 66px;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carousel-item {
+        height: 450px;
+    }
+    
+    .carousel-caption {
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .section-title:after {
+        width: 60px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .counter {
+        font-size: 2rem;
+    }
+    
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel-item {
+        height: 350px;
+    }
+    
+    .carousel-caption {
+        padding: 15px;
+        max-width: 95%;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .display-6 {
+        font-size: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-wrapper i {
+        font-size: 1.75rem;
+    }
+} 
