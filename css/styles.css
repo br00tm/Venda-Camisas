@@ -396,7 +396,7 @@ footer {
 
 /* Ícones sociais no rodapé */
 .social-icons a {
-    font-size: 1.3rem;
+    color: #FFFFFF !important;
     transition: all var(--transition-speed);
     margin-right: 15px;
     display: inline-block;
@@ -452,6 +452,37 @@ footer {
     color: var(--danger-color);
 }
 
+/* Melhorando a legibilidade do formulário */
+.form-label {
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-check-label {
+    color: #FFFFFF;
+}
+
+/* Melhorando a legibilidade das informações de contato */
+.glass-card .card-body {
+    color: #FFFFFF;
+}
+
+.glass-card .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.glass-card p, .glass-card .mb-0 {
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.glass-card h5.h6 {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
 /* Decoração na página equipe */
 .rounded-circle {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -491,7 +522,7 @@ footer {
 
 .accordion-button {
     background-color: var(--primary-light);
-    color: var(--text-color);
+    color: #FFFFFF;
     font-weight: 500;
     padding: 1.25rem 1.5rem;
 }
@@ -512,7 +543,8 @@ footer {
 
 .accordion-body {
     padding: 1.5rem;
-    color: var(--text-dark);
+    color: #FFFFFF;
+    line-height: 1.7;
 }
 
 /* Botão voltar ao topo */
