@@ -1,26 +1,28 @@
-# Site Institucional Responsivo com Bootstrap 5
+# Loja Oficial Corinthians - Vendas de Camisas Online
 
-Este projeto é um site institucional responsivo desenvolvido com Bootstrap 5, criado como parte de um hands-on para demonstrar o uso dos principais componentes e utilitários do framework.
+Este projeto é um site de e-commerce para venda de camisas do Sport Club Corinthians Paulista, desenvolvido com Bootstrap 5, oferecendo uma experiência de compra completa e responsiva para os torcedores do Timão.
 
 ## Páginas
 
 O site é composto por quatro páginas principais:
 
-1. **Home**: Contém navbar fixa com dropdown, carrossel de imagens e seção de destaques.
-2. **Quem Somos**: Apresentação da empresa utilizando o sistema de grid do Bootstrap.
-3. **Nossos Serviços**: Layout responsivo com três colunas (desktop) e uma coluna (mobile), incluindo ícones para representar serviços.
-4. **Contato**: Formulário responsivo com validação, além de mapa do Google Maps e informações de contato.
+1. **Início**: Página principal com carrossel de destaques, produtos em evidência e seções promocionais.
+2. **Sobre Nós**: Apresentação da história da loja, missão, visão, valores e equipe.
+3. **Produtos**: Catálogo de camisas oficiais, retrô e edições especiais, organizadas em categorias.
+4. **Contato**: Formulário para mensagens, informações de contato, perguntas frequentes e mapa de localização.
 
 ## Recursos e Componentes Utilizados
 
-- **Navbar Responsiva**: Menu de navegação que adapta-se a diferentes tamanhos de tela.
-- **Dropdown**: Menu suspenso para o perfil do usuário com opções: Meu Perfil, Alterar Senha e Sair.
-- **Carrossel**: Apresentação de imagens em slideshow na página inicial.
-- **Cards**: Utilizados para exibir serviços e informações em todas as páginas.
-- **Sistema de Grid**: Implementado para garantir a responsividade do layout.
-- **Formulário com Validação**: Validação nativa do Bootstrap para o formulário de contato.
-- **Componentes Interativos**: Tabs, accordions e outros componentes para melhorar a experiência do usuário.
-- **Classes Utilitárias**: Uso extensivo de classes de utilidade do Bootstrap para espaçamento, cores, tipografia, etc.
+- **Navbar Responsiva**: Menu de navegação adaptável a diferentes dispositivos.
+- **Carrinho Integrado**: Acesso rápido ao carrinho de compras na barra de navegação.
+- **Carrossel**: Apresentação das novidades e promoções na página inicial.
+- **Cards de Produtos**: Exibição elegante de produtos com etiquetas de desconto e novidades.
+- **Sistema de Grid**: Layout responsivo que se adapta a smartphones, tablets e desktops.
+- **Filtros de Categorias**: Tabs para filtrar diferentes tipos de camisas.
+- **Formulário de Contato**: Com validação para comunicação com o cliente.
+- **Modal de Personalização**: Informações sobre serviços de personalização de camisas.
+- **FAQ Accordion**: Seção de perguntas frequentes para melhor experiência do usuário.
+- **Efeitos Visuais**: Animações e transições para uma experiência mais envolvente.
 
 ## Tecnologias Utilizadas
 
@@ -29,16 +31,19 @@ O site é composto por quatro páginas principais:
 - JavaScript
 - Bootstrap 5
 - Bootstrap Icons
+- Google Fonts
+- Animate.css
+- AOS (Animate On Scroll)
 - Google Maps (iframe)
 
 ## Como Visualizar
 
 Para visualizar o site, basta abrir qualquer um dos arquivos HTML em um navegador web:
 
-- index.html (Página Home)
-- quem-somos.html
-- servicos.html
-- contato.html
+- index.html (Página Inicial)
+- quem-somos.html (Sobre Nós)
+- servicos.html (Produtos)
+- contato.html (Contato)
 
 ## Estrutura do Projeto
 
@@ -49,22 +54,31 @@ Para visualizar o site, basta abrir qualquer um dos arquivos HTML em um navegado
 ├── contato.html
 ├── css/
 │   └── styles.css
-├── img/
-└── js/
+├── js/
+│   └── main.js
+└── img/
 ```
 
-## Responsividade
+## Recursos de Design
 
-O site é totalmente responsivo, adaptando-se a diferentes tamanhos de tela:
+- **Tema Alvinegro**: Design que reflete as cores e a identidade do Corinthians.
+- **Elementos em Vidro (Glass Effect)**: Cards e componentes com efeito de transparência.
+- **Detalhes em Dourado**: Elementos de destaque na cor dourada, remetendo às conquistas do clube.
+- **Totalmente Responsivo**: Experiência otimizada em qualquer dispositivo.
+- **Animações Suaves**: Melhor experiência visual com animações ao scroll e interações.
 
-- **Desktop**: Layout completo com múltiplas colunas
-- **Tablet**: Adaptações na disposição dos elementos
-- **Mobile**: Layout simplificado de coluna única para melhor visualização
+## Funcionalidades de E-commerce
 
-## Autor
+- Exibição de produtos com preços e descontos
+- Etiquetas para produtos novos, em promoção e edições limitadas
+- Seleção de tamanhos (P, M, G, GG)
+- Opções de personalização de camisas
+- Indicador de itens esgotados
 
-Projeto desenvolvido como parte do hands-on para demonstração prática do Bootstrap 5.
+## Autores
+
+Site desenvolvido por torcedores e para torcedores do Sport Club Corinthians Paulista.
 
 ---
 
-&copy; 2023 | Projeto Site Institucional com Bootstrap 5 
+&copy; 2023 | Loja Oficial Corinthians - Todos os direitos reservados 
